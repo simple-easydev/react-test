@@ -60,4 +60,4 @@ class SideLayout extends React.Component{
     }
 };
 
-export default connect(null, null)(SideLayout);
+export default SideLayout;

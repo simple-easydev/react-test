@@ -85,11 +85,11 @@ class BodyLayout extends React.Component {
     }
 
     render() {
-        const countTotal = this.props.articles.length; // total
+        const countTotal = this.props.article.articles.length; // total
         const formattedTotal = countTotal < 10 ? ("0" + countTotal) : countTotal;
 
         var countUnread = 0; // unread
-        this.props.articles.forEach(element => {
+        this.props.article.articles.forEach(element => {
             if (element.isRead == false)
                 countUnread++;
         });
@@ -156,7 +156,7 @@ class BodyLayout extends React.Component {
                 </div>
                 <div className="table">
                     {
-                        this.props.articles.map((obj, index) => {
+                        this.props.article.articles.map((obj, index) => {
                             if (this.state.displayStyle == 2) {
                                 return (
                                     <Article key={index} data={obj} onDeleteItem={this.onDeleteItem}/>
@@ -176,7 +176,7 @@ class BodyLayout extends React.Component {
 };
 
 const mapStateToProps = (state) => ({
-	articles: state.article.articles
+	article: state.article
 });
 
 

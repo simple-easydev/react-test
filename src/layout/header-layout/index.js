@@ -21,4 +21,4 @@ class HeaderLayout extends React.Component {
     }
 };
 
-export default connect(null, null)(HeaderLayout);
+export default HeaderLayout;
