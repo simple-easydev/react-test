@@ -10,7 +10,7 @@ import "./style.scss";
 // import ArticleCard from '../../component/article-card'
 import { Article, ArticleCard } from '../../components'
 
-import { setArticles } from '../../redux/actions/article';
+import { setArticles , setArticleRead} from '../../redux/actions/article';
 
 // images
 import card_icon from '../../assets/icons/card.svg';
@@ -61,11 +61,24 @@ class BodyLayout extends React.Component {
     }
 
     onclickReadAll() {
-        alert("read all");
-    }
 
-    onDeleteItem(id){
-
+        // this.props.articles.forEach(article => {
+        //     if (article.isRead == false){
+        //         article.isRead = true;
+        //         api.articleMarkRead(article, ()=>{
+        //             console.log("changed");
+        //         });
+        //     }
+        // });
+        this.props.articles.forEach(article => {
+            if (article.isRead == false){
+                this.props.setArticleRead(article.id);
+                // article.isRead = true;
+                // api.articleMarkRead(article, ()=>{
+                //     console.log("changed");
+                // });
+            }
+        });
     }
 
     componentDidMount() {
@@ -81,10 +94,10 @@ class BodyLayout extends React.Component {
     }
 
     render() {
-        const countTotal = this.props.articles.length;
+        const countTotal = this.props.articles.length; // total
         const formattedTotal = countTotal < 10 ? ("0" + countTotal) : countTotal;
 
-        var countUnread = 0;
+        var countUnread = 0; // unread
         this.props.articles.forEach(element => {
             if (element.isRead == false)
                 countUnread++;
@@ -177,7 +190,8 @@ const mapStateToProps = (state) => ({
 
 
 const mapDispatchToProps = dispatch => bindActionCreators({
-	setArticles
+	setArticles,
+    setArticleRead
 }, dispatch);
 
 

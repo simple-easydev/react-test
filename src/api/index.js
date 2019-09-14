@@ -27,9 +27,19 @@ export function articleDelete(id, callback) {
 	});
 }
 
-export function articleMarkRead(id, callback) {
-	fetch(`http://localhost:3001/articles/${id}`, {
+export function articleMarkRead(article, callback) {
+	console.log(article.id);
+	fetch(`http://localhost:3001/articles/${article.id}`, {
 		method: 'PUT',
-		
-	});
+		headers: {'Content-Type': 'application/json'},
+		body: JSON.stringify(article)
+	})
+	.then(
+		(result) => {
+			callback(result, null);
+		},
+		(error) => {
+			callback([], error);
+		}
+	)
 }

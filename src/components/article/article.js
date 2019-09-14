@@ -23,13 +23,13 @@ class Article extends React.Component {
     }
 
     onClickMark() {
-        // this.props.articles[this.props.data.id].isRead = true;
-        // const newArticles = this.props.articles;
-        // this.props.setArticles(newArticles);
-
-        // setArticleRead
-        this.props.setArticleRead(this.props.data.id);
+        var article = this.props.data;
+        article.isRead = true;
         
+        api.articleMarkRead(article, ()=>{
+            console.log("changed");
+            this.props.setArticleRead(article.id);
+        })
     }
 
     render() {
