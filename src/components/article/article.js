@@ -21,14 +21,17 @@ class Article extends React.Component {
     }
 
     onClickMark() {
+        // this.props.articles[this.props.data.id].isRead = true;
+        // const newArticles = this.props.articles;
+        // this.props.setArticles(newArticles);
+
         // setArticleRead
         this.props.setArticleRead(this.props.data.id);
-        // alert(this.props.data.id);
+        
     }
 
     render() {
         const data = this.props.data;
-
         return (
             <div className="card">
                 <img className="image" src={avatar_icon}></img>
@@ -66,12 +69,17 @@ class Article extends React.Component {
     }
 };
 
+const mapStateToProps = (state) => ({
+	article: state.article
+});
+
+
 const mapDispatchToProps = dispatch => bindActionCreators({
-	setArticleRead
+    setArticleRead
 }, dispatch);
 
 
 export default connect(
-	null,
+	mapStateToProps,
 	mapDispatchToProps
 )(Article);
