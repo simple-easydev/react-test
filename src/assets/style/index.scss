@@ -1,3 +1,47 @@
-h1{
-  color:red;
+@import url('https://fonts.googleapis.com/css?family=Open+Sans|Roboto');
+
+
+$blueColor: #2196f3;
+
+.roboto-medium {
+  font-family: 'Roboto' !important;
+  font-weight: 500 !important;
 }
+
+.roboto-regular {
+  font-family: 'Roboto' !important;
+  font-weight: 400 !important;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: #f4f8f9;
+  // font-family: sans-serif;
+  //   background: $blueColor;
+}
+
+.content-layout {
+  margin-left: 100px;
+  // width: 100%;
+}
+
+.main-div {
+  float: left;
+  position: relative;
+}
+
+h1 {
+  color: red;
+}
+
+button {
+  border-width: 0px;
+  border-radius: 3px;
+  text-transform: none;
+}
+
+// button:hover {
+//   box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+// }
+

@@ -1,8 +1,9 @@
 import { combineReducers } from 'redux';
-import block from './block';
+// import block from './block';
+import article from './article';
 
 const rootReducer = combineReducers({
-	block
+	article
 });
 
 export default rootReducer;

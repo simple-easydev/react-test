@@ -1,13 +1,22 @@
 
 import React from "react";
-
 import { connect } from 'react-redux';
 
-class HeaderLayout extends React.Component{
+import "./style.scss";
 
-    render(){
+// images
+import search_icon from '../../assets/image/search icon.png';
+import avatar_icon from '../../assets/image/Oval 2.png';
+
+class HeaderLayout extends React.Component {
+
+    render() {
         return (
-            <h1>This is Header</h1>
+            <div className="header-layout">
+                <img className="image-search" src={search_icon}></img>
+                <input placeholder="Find a user, team, meeting..."></input>
+                <img className="image-profile" src={avatar_icon}></img>
+            </div>
         );
     }
 };

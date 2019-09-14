@@ -1,0 +1,35 @@
+.side-layout {
+  position: absolute;
+  top: 0;
+  left: 0;
+  min-height: 100%;
+  width: 99px;
+  border-right: 1px solid #e7e9ea;
+  background: white;
+
+  img {
+    display: block;
+    margin: auto;
+  }
+
+  .div-logo {
+    height: 100px;
+    align-items: center;
+    display: flex;
+    margin-bottom: 50px;
+  }
+
+  .div-menu {
+    height: 45px;
+    align-items: center;
+    display: flex;
+    margin-bottom: 20px;
+    .active {
+      width: 6px;
+      height: 100%;
+      background: #4192ec;
+      box-shadow: 2px 3px 11px 0 rgba(1, 172, 253, 0.74);
+      border-radius: 0 5px 5px 0;
+    }
+  }
+}

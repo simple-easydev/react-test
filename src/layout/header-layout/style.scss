@@ -1,0 +1,39 @@
+.header-layout {
+  display: flex;
+  align-items: center;
+  height: 100px;
+  border-bottom: 1px solid #e7e9ea;
+  background: white;
+
+  .image-search {
+    margin-left: 37px;
+    margin-right: 10px;
+  }
+
+  ::placeholder {
+	color: rgba(152,152,152,0.50);
+  }
+  
+  :-ms-input-placeholder { /* Internet Explorer 10-11 */
+	color: rgba(152,152,152,0.50);
+  }
+  
+  ::-ms-input-placeholder { /* Microsoft Edge */
+	color: rgba(152,152,152,0.50);
+  }
+
+  input {
+    width: 50%;
+    border-width: 0px;
+    font-family: Helvetica;
+    font-size: 16px;
+    color: rgb(152, 152, 152);
+  }
+
+  .image-profile {
+    // height: 58px;
+    // width: 58px;
+    margin-left: auto;
+    margin-right: 40px;
+  }
+}

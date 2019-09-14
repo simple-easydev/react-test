@@ -1,6 +1,21 @@
-export const host = 'localhost:8080';
-export const apiRoot = 'http://'+host+'/api/v1';
+import axios from 'axios'
+
+
+export const host = 'localhost:3001';
 export const apiUrls = {
-	GET_ETH_STATS: apiRoot + '/explorer/getEthStats',
-	GET_BLOCK: apiRoot + '/explorer/getBlock'
+	GET_ALL: host + '/articles',
+	// GET_BLOCK: apiRoot + '/explorer/getBlock'
 };
+
+export function getArticles(callback) {
+	axios({
+		headers: {'Access-Control-Allow-Origin': '*'},
+		method: 'get',
+		url: apiUrls.GET_ALL,
+		// data: data,
+		responseType: 'json',
+
+	}).then((response) => {
+		callback(response);
+	});
+}
