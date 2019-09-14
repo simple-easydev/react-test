@@ -21,10 +21,18 @@ export function articleAll(callback) {
 	)
 }
 
-export function articleDelete(id, callback) {
-	fetch(`http://localhost:3001/articles/${id}`, {
+export function articleDelete(article, callback) {
+	fetch(`http://localhost:3001/articles/${article.id}`, {
 		method: 'DELETE'
-	});
+	})
+	.then(
+		(result) => {
+			callback(result, null);
+		},
+		(error) => {
+			callback([], error);
+		}
+	)
 }
 
 export function articleMarkRead(article, callback) {

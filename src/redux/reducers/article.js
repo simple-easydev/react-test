@@ -18,12 +18,21 @@ export default (state = initState, action) => {
             // console.log(state.articles);
             var articles = state.articles;
             articles[action.id].isRead = true;
-            
+
             return {
                 ...state,
                 articles
             };
-
+        case actionTypes.ARTICLE_DELETE:
+            // console.log(action.id);
+            // console.log(state.articles);
+            var articles = state.articles.filter(function( obj ) {
+                return obj.id !== action.id;
+              });
+            return {
+                ...state,
+                articles
+            };
         default: return state;
     }
 };

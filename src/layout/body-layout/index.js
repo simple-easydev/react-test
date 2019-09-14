@@ -61,15 +61,6 @@ class BodyLayout extends React.Component {
     }
 
     onclickReadAll() {
-
-        // this.props.articles.forEach(article => {
-        //     if (article.isRead == false){
-        //         article.isRead = true;
-        //         api.articleMarkRead(article, ()=>{
-        //             console.log("changed");
-        //         });
-        //     }
-        // });
         this.props.articles.forEach(article => {
             if (article.isRead == false){
                 this.props.setArticleRead(article.id);

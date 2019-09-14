@@ -13,3 +13,10 @@ export const setArticleRead = (id) => dispatch => {
 		id
 	});
 };
+
+export const setArticleDelete = (id) => dispatch => {
+	dispatch({
+		type: actionTypes.ARTICLE_DELETE,
+		id
+	});
+};

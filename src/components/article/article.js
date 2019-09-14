@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
 import "./article.scss";
-import {setArticleRead} from '../../redux/actions/article'
+import {setArticleRead, setArticleDelete} from '../../redux/actions/article'
 import * as api from '../../api'
 
 // images
@@ -17,8 +17,10 @@ class Article extends React.Component {
 
 
     onClickDelete() {
-        api.articleDelete(this.props.data.id, ()=>{
+        var article = this.props.data;
+        api.articleDelete(article, ()=>{
             console.log("deleted");
+            this.props.setArticleDelete(article.id);
         })
     }
 
@@ -77,7 +79,8 @@ const mapStateToProps = (state) => ({
 
 
 const mapDispatchToProps = dispatch => bindActionCreators({
-    setArticleRead
+    setArticleRead,
+    setArticleDelete
 }, dispatch);
 
 
