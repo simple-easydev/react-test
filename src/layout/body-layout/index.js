@@ -69,32 +69,34 @@ class BodyLayout extends React.Component {
 
     }
 
-    // componentDidMount() {
+    componentDidMount() {
 
-    //     fetch("http://localhost:3001/articles")
-    //         .then(res => res.json())
-    //         .then(
-    //             (result) => {
-    //                 console.log(result);
-    //                 this.setState({
-    //                     isLoaded: true,
-    //                     articles: result
-    //                 });
-    //             },
-    //             // Note: it's important to handle errors here
-    //             // instead of a catch() block so that we don't swallow
-    //             // exceptions from actual bugs in components.
-    //             (error) => {
-    //                 this.setState({
-    //                     isLoaded: true,
-    //                     error
-    //                 });
-    //             }
-    //         )
-    //     // api.getArticles((response) => {
-    //     //     console.log(response);
-    //     // })
-    // }
+        console.log("did mount!");
+
+        // fetch("http://localhost:3001/articles")
+        //     .then(res => res.json())
+        //     .then(
+        //         (result) => {
+        //             console.log(result);
+        //             this.setState({
+        //                 isLoaded: true,
+        //                 articles: result
+        //             });
+        //         },
+        //         // Note: it's important to handle errors here
+        //         // instead of a catch() block so that we don't swallow
+        //         // exceptions from actual bugs in components.
+        //         (error) => {
+        //             this.setState({
+        //                 isLoaded: true,
+        //                 error
+        //             });
+        //         }
+        //     )
+        // api.getArticles((response) => {
+        //     console.log(response);
+        // })
+    }
 
     render() {
         const countTotal = this.props.articles.length;
