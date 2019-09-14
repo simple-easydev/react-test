@@ -5,6 +5,7 @@ import { bindActionCreators } from 'redux';
 
 import "./article.scss";
 import {setArticleRead} from '../../redux/actions/article'
+import * as api from '../../api'
 
 // images
 import delete_icon from '../../assets/icons/delete.svg';
@@ -16,8 +17,9 @@ class Article extends React.Component {
 
 
     onClickDelete() {
-        alert(this.props.data.id);
-        // this.props.onDeleteItem(this.props.data.id);
+        api.articleDelete(this.props.data.id, ()=>{
+            console.log("deleted");
+        })
     }
 
     onClickMark() {

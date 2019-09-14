@@ -65,36 +65,20 @@ class BodyLayout extends React.Component {
     }
 
     onDeleteItem(id){
-        
 
     }
 
-    // componentDidMount() {
-
-    //     fetch("http://localhost:3001/articles")
-    //         .then(res => res.json())
-    //         .then(
-    //             (result) => {
-    //                 console.log(result);
-    //                 this.setState({
-    //                     isLoaded: true,
-    //                     articles: result
-    //                 });
-    //             },
-    //             // Note: it's important to handle errors here
-    //             // instead of a catch() block so that we don't swallow
-    //             // exceptions from actual bugs in components.
-    //             (error) => {
-    //                 this.setState({
-    //                     isLoaded: true,
-    //                     error
-    //                 });
-    //             }
-    //         )
-    //     // api.getArticles((response) => {
-    //     //     console.log(response);
-    //     // })
-    // }
+    componentDidMount() {
+        api.articleAll((result, error)=>{
+            this.props.setArticles(result);
+        })
+        // console.log(result);
+        // // this.setState({
+        // //     isLoaded: true,
+        // //     articles: result
+        // // });
+        // this.props.setArticles(result);
+    }
 
     render() {
         const countTotal = this.props.articles.length;
@@ -181,7 +165,6 @@ class BodyLayout extends React.Component {
                             }
                         })
                     }
-
                 </div>
             </div>
         );

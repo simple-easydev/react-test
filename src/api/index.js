@@ -7,15 +7,29 @@ export const apiUrls = {
 	// GET_BLOCK: apiRoot + '/explorer/getBlock'
 };
 
-export function getArticles(callback) {
-	axios({
-		headers: {'Access-Control-Allow-Origin': '*'},
-		method: 'get',
-		url: apiUrls.GET_ALL,
-		// data: data,
-		responseType: 'json',
+export function articleAll(callback) {
+	
+	fetch("http://localhost:3001/articles")
+	.then(res => res.json())
+	.then(
+		(result) => {
+			callback(result, null);
+		},
+		(error) => {
+			callback([], error);
+		}
+	)
+}
 
-	}).then((response) => {
-		callback(response);
+export function articleDelete(id, callback) {
+	fetch(`http://localhost:3001/articles/${id}`, {
+		method: 'DELETE'
+	});
+}
+
+export function articleMarkRead(id, callback) {
+	fetch(`http://localhost:3001/articles/${id}`, {
+		method: 'PUT',
+		
 	});
 }
