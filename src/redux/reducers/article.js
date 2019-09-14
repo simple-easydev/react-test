@@ -17,7 +17,13 @@ export default (state = initState, action) => {
             // console.log(action.id);
             // console.log(state.articles);
             var articles = state.articles;
-            articles[action.id].isRead = true;
+            // articles[action.id].isRead = true;
+
+            articles.forEach(element => {
+                if (element.id == action.id){
+                    element.isRead = true;
+                }
+            });
 
             return {
                 ...state,
